@@ -11,14 +11,8 @@ void setup()
 {
     app = new WiFiManagerPortal("Smart Water Meter", 115200);
     app->setup();
-    WiFiManagerPortal *wifiportal = dynamic_cast<WiFiManagerPortal *>(app);
-    if (wifiportal)
-    {
-        if (wifiportal->get_mode() == WiFiManagerPortal::ManagerMode::Connected)
-        {
-            Serial.println("WiFi portal is connected!");
-        }
-    }
+    if (app->get_status() == 3)
+        Serial.println("WiFi portal is connected!");
 }
 
 void loop()
