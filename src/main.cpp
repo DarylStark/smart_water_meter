@@ -12,7 +12,7 @@ void setup()
     app = new WiFiManagerPortal("Smart Water Meter", 115200);
     app->setup();
     if (app->get_status() == 3)
-        Serial.println("WiFi portal is connected!");
+        Serial.println("WiFi is connected, no portal will be shown!");
 }
 
 void loop()
